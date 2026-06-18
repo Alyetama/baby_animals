@@ -15,7 +15,7 @@ def opts() -> argparse.Namespace:
                         '--html-file',
                         help='HTML body file',
                         type=str,
-                        default='html_body_2.txt')
+                        required=True)
     parser.add_argument('-o',
                         '--output-dir',
                         help='Output directory for the downloaded images',

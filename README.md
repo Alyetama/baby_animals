@@ -12,7 +12,7 @@ The following scripts are tracked and actively used in this repository:
 A Python script used to parse and download images from an HTML dump.
 - **Description:** Reads an HTML file, extracts image URLs via regex, and downloads them locally.
 - **Arguments:**
-  - `-f`, `--html-file`: HTML file to parse (default `html_body_2.txt`).
+  - `-f`, `--html-file`: HTML file to parse.
   - `-o`, `--output-dir`: Directory to save downloaded images.
 
 ### 2. `export_annotations.sh`
