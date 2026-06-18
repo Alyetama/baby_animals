@@ -117,6 +117,15 @@ def main():
         if isinstance(_cls, str):
             _cls = [_cls]
 
+        # Label Studio choices can sometimes be lists of lists, e.g. [['adult'], ['juvenile']]
+        _cls = [c[0] if isinstance(c, list) else c for c in _cls]
+
+        # If there's only one class but multiple bounding boxes, broadcast the class
+        if len(_cls) == 1 and len(d['rect-1']) > 1:
+            _cls = _cls * len(d['rect-1'])
+        elif len(_cls) != len(d['rect-1']):
+            print(f"Warning: length mismatch in {image}. Rects: {len(d['rect-1'])}, Classes: {len(_cls)}")
+
         if not Path(image_relative_path).exists():
             print(f'Image does not exist! {image}')
             continue
