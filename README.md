@@ -52,8 +52,8 @@ Automates the generation of predictions for unannotated tasks.
   - `--after-date`: Only process tasks created after a specific date.
 
 ## Environment Variables
-Some scripts (e.g. `export_annotations.sh`, `send_prediction_tasks.py`) expect a `.env` file in the project root:
-```env
-LABEL_STUDIO_TOKEN="your_token"
-LABEL_STUDIO_BASE_URL="http://<base_url>"
+Some scripts (e.g. `export_annotations.sh`, `send_prediction_tasks.py`) expect a `.env` file in the project root. You can copy the provided `.env.example` file to create yours:
+```bash
+cp .env.example .env
 ```
+Then, populate the .env file with the appropriate values.
